@@ -1,7 +1,11 @@
 NAME = libft.a
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I includes
 AR = ar rcs
+
+SRC_DIR = src
+OBJ_DIR = obj
+INC_DIR = includes
 
 SRCS =	ft_isalpha.c \
 	ft_isdigit.c \
@@ -38,20 +42,19 @@ SRCS =	ft_isalpha.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
-OBJS = $(SRCS:.c=.o)
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-%.o: %.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/libft.h
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJS): libft.h
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
