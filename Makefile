@@ -56,7 +56,7 @@ OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/libft.h
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/%.h
 	@mkdir -p $(OBJ_DIR) $(OBJ_DIR)/$(OBJ_PRINTF_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
