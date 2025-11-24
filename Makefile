@@ -54,9 +54,15 @@ SRCS =	ft_isalpha.c \
 	$(OBJ_PRINTF_DIR)/ft_handle_x.c
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
+HEADER_FILES =  base_constants.h \
+				ft_printf_handlers.h \
+				libft.h
+HEADERS = $(addprefix $(INC_DIR)/, $(HEADER_FILES))
+
+
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/%.h
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 	@mkdir -p $(OBJ_DIR) $(OBJ_DIR)/$(OBJ_PRINTF_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
