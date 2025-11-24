@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_handle_i.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtikhono <mtikhono@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 14:43:35 by mtikhono          #+#    #+#             */
-/*   Updated: 2025/11/24 19:06:50 by mtikhono         ###   ########.fr       */
+/*   Created: 2025/10/14 00:47:48 by mtikhono          #+#    #+#             */
+/*   Updated: 2025/11/24 19:36:34 by mtikhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "base_constants.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_handle_i(int i, char p)
 {
-	size_t	i;
+	int	count;
 
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	count = 0;
+	if (i >= 0)
+	{
+		if (p == '+')
+			count += ft_putchar_fd('+', 1);
+		else if (p == ' ')
+			count += ft_putchar_fd(' ', 1);
+	}
+	count += ft_putnbr_base_fd(i, BASE_DEC, 1);
+	return (count);
 }

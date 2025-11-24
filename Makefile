@@ -4,8 +4,9 @@ CFLAGS = -Wall -Werror -Wextra -I includes
 AR = ar rcs
 
 SRC_DIR = src
-OBJ_DIR = obj
 INC_DIR = includes
+OBJ_DIR = obj
+OBJ_PRINTF_DIR = ft_printf_handlers
 
 SRCS =	ft_isalpha.c \
 	ft_isdigit.c \
@@ -41,13 +42,22 @@ SRCS =	ft_isalpha.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_base_fd.c \
+	ft_putsizet_base_fd.c \
+	ft_putuint_base_fd.c \
+	ft_printf.c \
+	$(OBJ_PRINTF_DIR)/ft_handle_c.c \
+	$(OBJ_PRINTF_DIR)/ft_handle_i.c \
+	$(OBJ_PRINTF_DIR)/ft_handle_p.c \
+	$(OBJ_PRINTF_DIR)/ft_handle_s.c \
+	$(OBJ_PRINTF_DIR)/ft_handle_u.c \
+	$(OBJ_PRINTF_DIR)/ft_handle_x.c
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/libft.h
-	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR) $(OBJ_DIR)/$(OBJ_PRINTF_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)

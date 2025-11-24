@@ -6,16 +6,20 @@
 /*   By: mtikhono <mtikhono@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 01:57:59 by mtikhono          #+#    #+#             */
-/*   Updated: 2025/10/07 16:53:05 by mtikhono         ###   ########.fr       */
+/*   Updated: 2025/11/24 19:16:09 by mtikhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(char *s, int fd)
 {
+	size_t	len;
+
 	if (!s)
-		return ;
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+		return (0);
+	len = 0;
+	len += ft_putstr_fd(s, fd);
+	len += ft_putchar_fd('\n', fd);
+	return (len);
 }

@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_handle_c.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtikhono <mtikhono@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 14:43:35 by mtikhono          #+#    #+#             */
-/*   Updated: 2025/11/24 19:06:50 by mtikhono         ###   ########.fr       */
+/*   Created: 2025/10/14 00:46:03 by mtikhono          #+#    #+#             */
+/*   Updated: 2025/11/24 19:17:56 by mtikhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_handle_c(int c)
 {
-	size_t	i;
-
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	return (ft_putchar_fd(c, 1));
 }

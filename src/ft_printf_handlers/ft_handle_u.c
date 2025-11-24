@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_handle_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtikhono <mtikhono@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 14:43:35 by mtikhono          #+#    #+#             */
-/*   Updated: 2025/11/24 19:06:50 by mtikhono         ###   ########.fr       */
+/*   Created: 2025/10/14 01:52:47 by mtikhono          #+#    #+#             */
+/*   Updated: 2025/11/24 19:37:23 by mtikhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "base_constants.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_handle_u(unsigned int u)
 {
-	size_t	i;
-
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	return (ft_putuint_base_fd(u, BASE_DEC, 1));
 }

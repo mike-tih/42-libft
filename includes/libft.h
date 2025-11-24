@@ -6,7 +6,7 @@
 /*   By: mtikhono <mtikhono@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 15:26:22 by mtikhono          #+#    #+#             */
-/*   Updated: 2025/10/13 01:36:57 by mtikhono         ###   ########.fr       */
+/*   Updated: 2025/11/24 19:34:00 by mtikhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,16 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(char *s, int fd);
+int		ft_putendl_fd(char *s, int fd);
+int		ft_putnbr_base_fd(int nb, char *base, int fd);
+int		ft_putsizet_base_fd(size_t n, char *base, int fd);
+int		ft_putuint_base_fd(unsigned int n, char *base, int fd);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+int		ft_printf(const char *str, ...);
 
 #endif

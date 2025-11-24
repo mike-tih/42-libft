@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_printf_handlers.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtikhono <mtikhono@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 14:31:14 by mtikhono          #+#    #+#             */
-/*   Updated: 2025/10/07 02:04:30 by mtikhono         ###   ########.fr       */
+/*   Created: 2025/10/14 00:30:23 by mtikhono          #+#    #+#             */
+/*   Updated: 2025/11/24 19:55:40 by mtikhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_HANDLERS_H
+# define FT_PRINTF_HANDLERS_H
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	long int	nb;
+# include <stdarg.h>
+# include <stddef.h>
 
-	nb = n;
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
-	}
-	else
-		ft_putchar_fd(nb + 48, fd);
-}
+int	ft_handle_c(int c);
+int	ft_handle_s(char *s);
+int	ft_handle_p(void *p);
+int	ft_handle_i(int i, char p);
+int	ft_handle_u(unsigned int u);
+int	ft_handle_x(unsigned int u, char p);
+int	ft_handle_x_upper(unsigned int u, char p);
+
+#endif
