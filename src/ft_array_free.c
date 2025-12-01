@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_array_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtikhono <mtikhono@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/12 23:58:29 by mtikhono          #+#    #+#             */
-/*   Updated: 2025/11/25 16:53:26 by mtikhono         ###   ########.fr       */
+/*   Created: 2025/11/26 00:27:09 by mtikhono          #+#    #+#             */
+/*   Updated: 2025/11/26 00:41:52 by mtikhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+int	ft_array_free(char **arr)
 {
-	return (c == 32 || (c > 8 && c < 14));
+	size_t	i;
+
+	if (!arr)
+		return (1);
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
+	arr = NULL;
+	return (1);
 }

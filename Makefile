@@ -36,6 +36,7 @@ SRCS =	ft_isalpha.c \
 	ft_strjoin.c \
 	ft_strtrim.c \
 	ft_split.c \
+	ft_split_if.c \
 	ft_itoa.c \
 	ft_strmapi.c \
 	ft_striteri.c \
@@ -45,6 +46,9 @@ SRCS =	ft_isalpha.c \
 	ft_putnbr_base_fd.c \
 	ft_putsizet_base_fd.c \
 	ft_putuint_base_fd.c \
+	ft_int_in_array.c \
+	ft_array_free.c \
+	ft_arraylen.c \
 	ft_printf.c \
 	$(OBJ_PRINTF_DIR)/ft_handle_c.c \
 	$(OBJ_PRINTF_DIR)/ft_handle_i.c \

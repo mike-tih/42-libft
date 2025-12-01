@@ -11,6 +11,8 @@ This repository contains my personal, enhanced version of the libft library - or
 - Flag support for ft_printf: `#` (alternate form), `+` (force sign), ` ` (space before positive)
 - Enhanced output functions returning byte counts for easier tracking
 - Base conversion utilities for flexible number representation
+- Advanced string splitting with custom predicates (`ft_split_if`)
+- Array manipulation utilities (length, memory management, search)
 
 ## Build Instructions
 
@@ -24,8 +26,8 @@ This repository contains my personal, enhanced version of the libft library - or
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd enhanced-libft
+git clone <your-repo-url> libft
+cd libft
 
 # Compile the library
 make
@@ -87,6 +89,65 @@ int main(void)
     return (0);
 }
 ```
+
+## Function Reference
+
+### Character Classification
+- `ft_isalpha` - checks if character is alphabetic
+- `ft_isdigit` - checks if character is a digit
+- `ft_isalnum` - checks if character is alphanumeric
+- `ft_isascii` - checks if character is ASCII
+- `ft_isprint` - checks if character is printable
+- `ft_isspace` - checks if character is whitespace
+
+### String Manipulation
+- `ft_strlen` - calculates string length
+- `ft_strchr` - locates first occurrence of character in string
+- `ft_strrchr` - locates last occurrence of character in string
+- `ft_strncmp` - compares strings up to n characters
+- `ft_strnstr` - locates substring in string
+- `ft_strdup` - duplicates string
+- `ft_substr` - extracts substring
+- `ft_strjoin` - concatenates two strings
+- `ft_strtrim` - trims characters from both ends
+- `ft_split` - splits string by delimiter character
+- `ft_split_if` - splits string using custom predicate function
+- `ft_strmapi` - applies function to each character with index
+- `ft_striteri` - iterates over string with function
+- `ft_strlcpy` - size-bounded string copying
+- `ft_strlcat` - size-bounded string concatenation
+
+### Memory Operations
+- `ft_memset` - fills memory with constant byte
+- `ft_bzero` - zeros memory area
+- `ft_memcpy` - copies memory area
+- `ft_memmove` - copies memory area (handles overlaps)
+- `ft_memchr` - scans memory for character
+- `ft_memcmp` - compares memory areas
+- `ft_calloc` - allocates and zeros memory
+
+### Character Conversion
+- `ft_toupper` - converts to uppercase
+- `ft_tolower` - converts to lowercase
+- `ft_atoi` - converts string to integer
+- `ft_itoa` - converts integer to string
+
+### Output Functions
+All output functions return the number of bytes written:
+- `ft_putchar_fd` - outputs character to file descriptor
+- `ft_putstr_fd` - outputs string to file descriptor
+- `ft_putendl_fd` - outputs string with newline to file descriptor
+- `ft_putnbr_base_fd` - outputs integer in specified base
+- `ft_putsizet_base_fd` - outputs size_t in specified base
+- `ft_putuint_base_fd` - outputs unsigned int in specified base
+
+### Array Utilities
+- `ft_arraylen` - returns length of null-terminated string array
+- `ft_array_free` - frees null-terminated string array
+- `ft_int_in_array` - checks if integer exists in array or integers
+
+### Formatted Output
+- `ft_printf` - formatted output with support for multiple format specifiers and flags
 
 ## License
 

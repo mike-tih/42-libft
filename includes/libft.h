@@ -6,7 +6,7 @@
 /*   By: mtikhono <mtikhono@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 15:26:22 by mtikhono          #+#    #+#             */
-/*   Updated: 2025/11/24 19:34:00 by mtikhono         ###   ########.fr       */
+/*   Updated: 2025/11/26 00:41:16 by mtikhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-int		ft_isspace(char c);
+int		ft_isspace(int c);
 
 size_t	ft_strlen(const char *s);
 
@@ -54,6 +54,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	**ft_split_if(char const *s, int (*is_sep)(int));
 char	*ft_itoa(int n);
 
 int		ft_putchar_fd(char c, int fd);
@@ -65,6 +66,10 @@ int		ft_putuint_base_fd(unsigned int n, char *base, int fd);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+int		ft_int_in_array(int *array, size_t size, int value);
+int		ft_array_free(char **arr);
+size_t	ft_arraylen(char **arr);
 
 int		ft_printf(const char *str, ...);
 
