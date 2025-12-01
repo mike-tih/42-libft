@@ -6,7 +6,7 @@
 /*   By: mtikhono <mtikhono@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 15:26:22 by mtikhono          #+#    #+#             */
-/*   Updated: 2025/11/26 00:41:16 by mtikhono         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:38:34 by mtikhono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ int		ft_array_free(char **arr);
 size_t	ft_arraylen(char **arr);
 
 int		ft_printf(const char *str, ...);
+
+char	*ft_get_next_line(int fd);
 
 #endif

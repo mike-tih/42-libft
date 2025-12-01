@@ -9,6 +9,7 @@ This repository contains my personal, enhanced version of the libft library - or
 **Key additions:**
 - `ft_printf` - custom implementation with format specifiers (c, s, p, d, i, u, x, X, %)
 - Flag support for ft_printf: `#` (alternate form), `+` (force sign), ` ` (space before positive)
+- `ft_get_next_line` - reads one line at a time from file descriptors with configurable buffer size
 - Enhanced output functions returning byte counts for easier tracking
 - Base conversion utilities for flexible number representation
 - Advanced string splitting with custom predicates (`ft_split_if`)
@@ -64,6 +65,7 @@ libft/
 ├── includes/
 │   ├── libft.h                 # Main header
 │   ├── ft_printf_handlers.h    # Printf handlers
+│   ├── ft_get_next_line.h      # Get next line functionality
 │   └── base_constants.h        # Number base definitions
 ├── Makefile
 ├── README.md
@@ -145,6 +147,9 @@ All output functions return the number of bytes written:
 - `ft_arraylen` - returns length of null-terminated string array
 - `ft_array_free` - frees null-terminated string array
 - `ft_int_in_array` - checks if integer exists in array or integers
+
+### File I/O
+- `ft_get_next_line` - reads one line at a time from a file descriptor (supports multiple file descriptors, configurable BUFFER_SIZE)
 
 ### Formatted Output
 - `ft_printf` - formatted output with support for multiple format specifiers and flags

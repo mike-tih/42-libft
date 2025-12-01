@@ -49,6 +49,7 @@ SRCS =	ft_isalpha.c \
 	ft_int_in_array.c \
 	ft_array_free.c \
 	ft_arraylen.c \
+	ft_get_next_line.c \
 	ft_printf.c \
 	$(OBJ_PRINTF_DIR)/ft_handle_c.c \
 	$(OBJ_PRINTF_DIR)/ft_handle_i.c \
@@ -59,6 +60,7 @@ SRCS =	ft_isalpha.c \
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 HEADER_FILES =  base_constants.h \
+				ft_get_next_line.h \
 				ft_printf_handlers.h \
 				libft.h
 HEADERS = $(addprefix $(INC_DIR)/, $(HEADER_FILES))
